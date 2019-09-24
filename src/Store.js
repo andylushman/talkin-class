@@ -33,8 +33,6 @@ export default function Store(props) {
   if (!socket) {
     socket = io(':3001');
     socket.on('chat message', msg => {
-      console.log(msg);
-
       dispatch({ type: 'RECEIVE MESSAGE', payload: msg });
     });
   }
