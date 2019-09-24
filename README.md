@@ -33,4 +33,4 @@ Areas for improvement:
 - User Accounts - This project could go much deeper with creating user accounts and authentication. Maybe use Google oauth for a quick JWT generation and sign-in.
 - Data Management - There may have been a more elegant way to handle the data through using react-redux but I wanted to get more experience with React Hooks :)
 
-I am sure there are plenty of other areas where this app can be improved but there are a couple that come to mind.
+I am sure there are plenty of other areas where this app can be improved but these are a couple that come to mind.
