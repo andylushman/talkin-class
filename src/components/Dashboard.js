@@ -2,12 +2,11 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Chip from '@material-ui/core/Chip';
+
 import { CTX } from '../Store';
 import ChatBox from './ChatBox';
+import TopicsWindow from './TopicsWindow';
+import ChatWindow from './ChatWindow';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,22 +16,6 @@ const useStyles = makeStyles(theme => ({
   flex: {
     display: 'flex',
     alignItems: 'center'
-  },
-  topicsWindow: {
-    width: '30%',
-    height: '300px',
-    borderRight: '1px solid gray'
-  },
-  chatWindow: {
-    width: '70%',
-    height: '300px',
-    padding: '20px'
-  },
-  chatBox: {
-    width: '85%'
-  },
-  button: {
-    width: '15%'
   }
 }));
 
@@ -58,31 +41,16 @@ export default function Dashboard() {
           {activeTopic}
         </Typography>
         <div className={classes.flex}>
-          <div className={classes.topicsWindow}>
-            <List>
-              {topics.map(topic => (
-                <ListItem
-                  onClick={e => changeActiveTopic(e.target.innerText)}
-                  key={topic}
-                  button
-                >
-                  <ListItemText primary={topic} />
-                </ListItem>
-              ))}
-            </List>
-          </div>
-          <div className={classes.chatWindow}>
-            {allChats[activeTopic].map((chat, i) => (
-              <div className={classes.flex} key={i}>
-                <Chip label={chat.from} className={classes.chip} />
-                <Typography variant="body1" component="p" gutterBottom>
-                  {chat.msg}
-                </Typography>
-              </div>
-            ))}
-          </div>
+          <TopicsWindow
+            topics={topics}
+            changeActiveTopic={changeActiveTopic}
+            allChats={allChats}
+            activeTopic={activeTopic}
+          />
+          <ChatWindow allChats={allChats} activeTopic={activeTopic} />
         </div>
         <ChatBox
+          className={classes.ChatBox}
           changeTextValue={changeTextValue}
           sendChatAction={sendChatAction}
           textValue={textValue}
