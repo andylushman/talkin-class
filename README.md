@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to Use the App
 
-## Available Scripts
+In your terminal run:
 
-In the project directory, you can run:
+> **git clone git@github.com:andylushman/talkin-class.git**
 
-### `npm start`
+navigate into the _talkin-class_ folder and run:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> **yarn install**
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+then run:
 
-### `npm test`
+> **yarn start**
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To interact with the app, open multiple browsers and navigate to localhost: 3000 in each one. From here you can type and send messages. If you check corresponding app channels in the other browsers, you will see the messages. Each channel is hardcoded with a few messages to start.
 
-### `npm run build`
+## Reflection
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In this app I used the following technologies:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- React
+- Node.js - Express
+- Sockets.io
+- Material - UI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+At a high level, the frontend of the app sets up a connection with _sockets.io_ through the _server_. From there, the _server_ listens for _emit events_ from the _client_ and broadcast them when they are received. _Sockets.io_ receives the message and sends back the data/message to the _client_ where it is displayed in the browser.
 
-### `npm run eject`
+This project was a lot of fun and it gave me an opportunity to learn a lot. One example is Material - UI. Until this project, I've never used Material - UI and I've come to like it in a short period of time. It seems to be very intuitive and makes for quick styling when developing. That being said, I still believe the app could be improved greatly if given more time.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Areas for improvement:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- UI - Classes and styling should be more consistent. At the moment there are inline styles and makeStyles from Material - UI I took this opportunity to learn about Material - UI but if given more time I probably would of included scss and assigned variables to style values. Also, I would taken more advantage of css files.
+- User Accounts - This project could go much deeper with creating user accounts and authentication. Maybe use Google oauth for a quick JWT generation and sign-in.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I am sure there are plenty of other areas where this app can be improved but there are a couple that come to mind.
