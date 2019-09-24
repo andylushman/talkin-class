@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { CTX } from './Store';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,6 +39,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function Dashboard() {
   const classes = useStyles();
+
+  //CTX Store
+  const [allChats] = React.useContext(CTX);
+  const topics = Object.keys(allChats);
+
   const [textValue, changeTextValue] = React.useState('');
   return (
     <div>
@@ -52,7 +58,7 @@ export default function Dashboard() {
         <div className={classes.flex}>
           <div className={classes.topicsWindow}>
             <List>
-              {['Student Success'].map(topic => (
+              {topics.map(topic => (
                 <ListItem key={topic} button>
                   <ListItemText primary={topic} />
                 </ListItem>
@@ -63,7 +69,9 @@ export default function Dashboard() {
             {[{ from: 'user', msg: 'hello' }].map((chat, i) => (
               <div className={classes.flex} key={i}>
                 <Chip label={chat.from} className={classes.chip} />
-                <Typography component="p">{chat.msg}</Typography>
+                <Typography variant="body1" component="p" gutterBottom>
+                  {chat.msg}
+                </Typography>
               </div>
             ))}
           </div>

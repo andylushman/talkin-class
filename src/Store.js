@@ -1,25 +1,27 @@
 import React from 'react';
 
-const CTX = React.createContext();
+export const CTX = React.createContext();
+
+const initialState = {
+  general: [{ from: 'Andy', msg: 'hello' }, { from: 'Lushman', msg: 'hello' }],
+  topic2: [{ from: 'Andy', msg: 'hello' }, { from: 'Lushman', msg: 'hello' }]
+};
 
 function reducer(state, action) {
-  switch(action.type){
+  const { from, msg, topic } = action.payload;
+  switch (action.type) {
     case 'RECEIVE MESSAGE':
       return {
-
-      }
-    default: 
-      return state
+        ...state,
+        [topic]: [...state[topic], { from, msg }]
+      };
+    default:
+      return state;
   }
 }
 
-export default function Store(props){
+export default function Store(props) {
+  const reducerHook = React.useReducer(reducer, initialState);
 
-  const reducerHook = React.useReducer(reducer, initialState)
-
-  return (
-    <CTX.Provider value={}>
-      {props.children}
-    </CTX.Provider>
-  )
-} 
+  return <CTX.Provider value={reducerHook}>{props.children}</CTX.Provider>;
+}
