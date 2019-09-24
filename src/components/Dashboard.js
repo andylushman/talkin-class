@@ -6,9 +6,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Chip from '@material-ui/core/Chip';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import { CTX } from './Store';
+import { CTX } from '../Store';
+import ChatBox from './ChatBox';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -83,30 +82,13 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
-        <div className={classes.flex}>
-          <TextField
-            id="standard-name"
-            label="Message"
-            className={classes.chatBox}
-            value={textValue}
-            onChange={e => changeTextValue(e.target.value)}
-          />
-          <Button
-            onClick={() => {
-              sendChatAction({
-                from: user,
-                msg: textValue,
-                topic: activeTopic
-              });
-              changeTextValue('');
-            }}
-            variant="contained"
-            color="primary"
-            className={classes.button}
-          >
-            Send
-          </Button>
-        </div>
+        <ChatBox
+          changeTextValue={changeTextValue}
+          sendChatAction={sendChatAction}
+          textValue={textValue}
+          user={user}
+          activeTopic={activeTopic}
+        />
       </Paper>
     </div>
   );
