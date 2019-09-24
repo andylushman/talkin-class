@@ -2,6 +2,9 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,7 +44,15 @@ export default function Dashboard() {
           topic
         </Typography>
         <div className={classes.flex}>
-          <div className={classes.topicsWindow}></div>
+          <div className={classes.topicsWindow}>
+            <List>
+              {['Student Success'].map(topic => (
+                <ListItem key={topic} button>
+                  <ListItemText primary={topic} />
+                </ListItem>
+              ))}
+            </List>
+          </div>
           <div className={classes.chatWindow}></div>
         </div>
         <div className={classes.flex}></div>
