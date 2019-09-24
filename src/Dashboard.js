@@ -44,6 +44,8 @@ export default function Dashboard() {
   const [allChats] = React.useContext(CTX);
   const topics = Object.keys(allChats);
 
+  //Local State
+  const [activeTopic, changeActiveTopic] = React.useState(topics[0]);
   const [textValue, changeTextValue] = React.useState('');
   return (
     <div>
@@ -53,13 +55,17 @@ export default function Dashboard() {
         </Typography>
 
         <Typography variant="h5" component="h5">
-          topic
+          {activeTopic}
         </Typography>
         <div className={classes.flex}>
           <div className={classes.topicsWindow}>
             <List>
               {topics.map(topic => (
-                <ListItem key={topic} button>
+                <ListItem
+                  onClick={e => changeActiveTopic(e.target.innerText)}
+                  key={topic}
+                  button
+                >
                   <ListItemText primary={topic} />
                 </ListItem>
               ))}
