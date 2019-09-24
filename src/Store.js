@@ -4,7 +4,7 @@ export const CTX = React.createContext();
 
 const initialState = {
   general: [{ from: 'Andy', msg: 'hello' }, { from: 'Lushman', msg: 'hello' }],
-  topic2: [{ from: 'Andy', msg: 'hello' }, { from: 'Lushman', msg: 'hello' }]
+  topic2: [{ from: 'Andy2', msg: 'hello' }, { from: 'Lushman2', msg: 'hello' }]
 };
 
 function reducer(state, action) {

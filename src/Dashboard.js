@@ -47,6 +47,7 @@ export default function Dashboard() {
   //Local State
   const [activeTopic, changeActiveTopic] = React.useState(topics[0]);
   const [textValue, changeTextValue] = React.useState('');
+
   return (
     <div>
       <Paper className={classes.root}>
@@ -72,7 +73,7 @@ export default function Dashboard() {
             </List>
           </div>
           <div className={classes.chatWindow}>
-            {[{ from: 'user', msg: 'hello' }].map((chat, i) => (
+            {allChats[activeTopic].map((chat, i) => (
               <div className={classes.flex} key={i}>
                 <Chip label={chat.from} className={classes.chip} />
                 <Typography variant="body1" component="p" gutterBottom>
