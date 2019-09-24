@@ -31,7 +31,7 @@ Areas for improvement:
 
 - UI - Classes and styling should be more consistent. At the moment there are inline styles and makeStyles from Material - UI I took this opportunity to learn about Material - UI but if given more time I probably would of included scss and assigned variables to style values. Also, I would taken more advantage of css files.
 - User Accounts - This project could go much deeper with creating user accounts and authentication. Maybe use Google oauth for a quick JWT generation and sign-in.
-- Data Management - There may have been a more elegant way to handle the data through using react-redux but I wanted to get more experience with React Hooks :)
+- State Management - There may have been a more elegant way to handle the state through using react-redux but I wanted to get more experience with React Hooks :)
 - Test - This app could be easily improved with some unit and integration test.
 
 I am sure there are plenty of other areas where this app can be improved but these are a couple that come to mind.
