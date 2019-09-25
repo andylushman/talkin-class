@@ -24,10 +24,10 @@ In this app I used the following technologies:
 
 - React
 - Node.js - Express
-- Sockets.io
+- Socket.io
 - Material - UI
 
-At a high level, the frontend of the app sets up a connection with _sockets.io_ through the _server_. From there, the _server_ listens for _emit events_ from the _client_ and broadcast them when they are received. _Sockets.io_ receives the message and sends back the data/message to the _client_ where it is displayed in the browser.
+At a high level, the frontend of the app sets up a connection with _socket.io_ through the _server_. From there, the _server_ listens for _emit events_ from the _client_ and broadcast them when they are received. _Socket.io_ receives the message and sends back the data/message to the _client_ where it is displayed in the browser.
 
 This project was a lot of fun and it gave me an opportunity to learn a lot. One example is Material - UI. Until this project, I've never used Material - UI and I've come to like it in a short period of time. It seems to be very intuitive and makes for quick styling when developing. That being said, I still believe the app could be improved greatly if given more time.
 
@@ -36,6 +36,6 @@ Areas for improvement:
 - UI - Classes and styling should be more consistent. At the moment there are inline styles and makeStyles from Material - UI I took this opportunity to learn about Material - UI but if given more time I probably would of included scss and assigned variables to style values. Also, I would taken more advantage of css files.
 - User Accounts - This project could go much deeper with creating user accounts and authentication. Maybe use Google oauth for a quick JWT generation and sign-in.
 - State Management - There may have been a more elegant way to handle the state through using react-redux but I wanted to get more experience with React Hooks :)
-- Test - This app could be easily improved with some unit and integration test.
+- Tests - This app could be easily improved with some unit and integration tests.
 
 I am sure there are plenty of other areas where this app can be improved but these are a couple that come to mind.
