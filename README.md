@@ -12,6 +12,10 @@ then run:
 
 > **yarn start**
 
+To start the server, open a separate terminal window and navigate to _src/server_ within the app and run:
+
+> **node index.js**
+
 To interact with the app, open multiple browsers and navigate to localhost: 3000 in each one. From here you can type and send messages. If you check corresponding app channels in the other browsers, you will see the messages. Each channel is hardcoded with a few messages to start.
 
 ## Reflection
