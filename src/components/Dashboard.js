@@ -40,12 +40,7 @@ export default function Dashboard() {
         {activeTopic}
       </Typography>
       <div className={classes.flex}>
-        <TopicsWindow
-          topics={topics}
-          changeActiveTopic={changeActiveTopic}
-          allChats={allChats}
-          activeTopic={activeTopic}
-        />
+        <TopicsWindow topics={topics} changeActiveTopic={changeActiveTopic} />
         <ChatWindow allChats={allChats} activeTopic={activeTopic} />
       </div>
       <ChatBox
